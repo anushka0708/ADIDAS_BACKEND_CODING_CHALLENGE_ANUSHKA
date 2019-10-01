@@ -1,0 +1,2 @@
+INDEX VERSION 1.130+A:\adidas_repo\ADIDAS_BACKEND_CODING_CHALLENGE_ANUSHKA\src\.metadata\.plugins\org.eclipse.jdt.core
+1198428553.index
