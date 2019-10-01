@@ -1,0 +1,33 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Product API",
+		"_postman_id": "ba95494f-644d-3f88-563d-c51f0b08357c",
+		"description": "Collection of requests for product API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Finding all the products",
+			"request": {
+				"url": "127.0.0.1:8088/products",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Finding all the products"
+			},
+			"response": []
+		},
+		{
+			"name": "Finding one product with ID",
+			"request": {
+				"url": "127.0.0.1:8088/products/ABC001",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Finding one product with productID ABC001, change the ID if required"
+			},
+			"response": []
+		}
+	]
+}
