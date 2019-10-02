@@ -790,8 +790,7 @@ public class DefaultApiExample {
         
         DefaultApi apiInstance = new DefaultApi();
         try {
-            'String' result = apiInstance.productsGet();
-            System.out.println(result);
+            apiInstance.productsGet();
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#productsGet");
             e.printStackTrace();
@@ -808,8 +807,7 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
         try {
-            'String' result = apiInstance.productsGet();
-            System.out.println(result);
+            apiInstance.productsGet();
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#productsGet");
             e.printStackTrace();
@@ -827,10 +825,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // searches all products
 [apiInstance productsGetWithCompletionHandler: 
-              ^('String' output, NSError* error) {
-                            if (output) {
-                                NSLog(@"%@", output);
-                            }
+              ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
                             }
@@ -847,7 +842,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 api.productsGet(callback);
@@ -876,8 +871,7 @@ namespace Example
             try
             {
                 // searches all products
-                'String' result = apiInstance.productsGet();
-                Debug.WriteLine(result);
+                apiInstance.productsGet();
             }
             catch (Exception e)
             {
@@ -896,8 +890,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new Swagger\Client\Api\DefaultApi();
 
 try {
-    $result = $api_instance->productsGet();
-    print_r($result);
+    $api_instance->productsGet();
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->productsGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -912,8 +905,7 @@ use WWW::SwaggerClient::DefaultApi;
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 
 eval { 
-    my $result = $api_instance->productsGet();
-    print Dumper($result);
+    $api_instance->productsGet();
 };
 if ($@) {
     warn "Exception when calling DefaultApi->productsGet: $@\n";
@@ -932,8 +924,7 @@ api_instance = swagger_client.DefaultApi()
 
 try: 
     # searches all products
-    api_response = api_instance.products_get()
-    pprint(api_response)
+    api_instance.products_get()
 except ApiException as e:
     print("Exception when calling DefaultApi->productsGet: %s\n" % e)</code></pre>
                             </div>
@@ -956,49 +947,6 @@ except ApiException as e:
                             </div>
 
                             <h3> Status: 200 - JSON array of products </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-productsGet-200-schema">Schema</a>
-                                </li>
-
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-productsGet-200-schema">
-                                  <div id='responses-productsGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = {
-  "description" : "JSON array of products",
-  "schema" : {
-    "type" : "string"
-  }
-};
-                                        var schema = schemaWrapper.schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.definitions = defs;
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        //console.log(JSON.stringify(schema));
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-productsGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-productsGet-200-schema-200');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-productsGet-200-schema-data' type='hidden' value=''></input>
-                                </div>
-                            </div>
-
-                            <h3> Status: 400 - bad input parameter </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>

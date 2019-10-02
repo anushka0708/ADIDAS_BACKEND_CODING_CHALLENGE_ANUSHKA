@@ -716,6 +716,9 @@ margin-bottom: 20px;
                     <li data-group="Default" data-name="productsPost" class="">
                       <a href="#api-Default-productsPost">productsPost</a>
                     </li>
+                    <li data-group="Default" data-name="productsProductIDDelete" class="">
+                      <a href="#api-Default-productsProductIDDelete">productsProductIDDelete</a>
+                    </li>
                     <li data-group="Default" data-name="productsProductIDPut" class="">
                       <a href="#api-Default-productsProductIDPut">productsProductIDPut</a>
                     </li>
@@ -1014,6 +1017,239 @@ $(document).ready(function() {
                             <div class="tab-content" style='margin-bottom: 10px;'>
                             </div>
 
+                            <h3> Status: 410 - Product ID can not be empty </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-productsProductIDDelete">
+                      <article id="api-Default-productsProductIDDelete-0" data-group="User" data-name="productsProductIDDelete" data-version="0">
+                        <div class="pull-left">
+                          <h1>productsProductIDDelete</h1>
+                          <p>deleted a product with given id</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">deletes the product having specified id
+</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/products/productID</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-productsProductIDDelete-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-productsProductIDDelete-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-productsProductIDDelete-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-productsProductIDDelete-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-productsProductIDDelete-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-productsProductIDDelete-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-productsProductIDDelete-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-productsProductIDDelete-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-productsProductIDDelete-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-productsProductIDDelete-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-productsProductIDDelete-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-productsProductIDDelete-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "https://localhost/products/productID"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-productsProductIDDelete-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        
+        DefaultApi apiInstance = new DefaultApi();
+        try {
+            apiInstance.productsProductIDDelete();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#productsProductIDDelete");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-productsProductIDDelete-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+        try {
+            apiInstance.productsProductIDDelete();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#productsProductIDDelete");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-productsProductIDDelete-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-productsProductIDDelete-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+// deleted a product with given id
+[apiInstance productsProductIDDeleteWithCompletionHandler: 
+              ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-productsProductIDDelete-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var AdidasChallengeApi = require('adidas_challenge_api');
+
+var api = new AdidasChallengeApi.DefaultApi()
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.productsProductIDDelete(callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-productsProductIDDelete-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-productsProductIDDelete-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class productsProductIDDeleteExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new DefaultApi();
+
+            try
+            {
+                // deleted a product with given id
+                apiInstance.productsProductIDDelete();
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.productsProductIDDelete: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-productsProductIDDelete-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\DefaultApi();
+
+try {
+    $api_instance->productsProductIDDelete();
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->productsProductIDDelete: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-productsProductIDDelete-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+
+eval { 
+    $api_instance->productsProductIDDelete();
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->productsProductIDDelete: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-productsProductIDDelete-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+
+try: 
+    # deleted a product with given id
+    api_instance.products_product_id_delete()
+except ApiException as e:
+    print("Exception when calling DefaultApi->productsProductIDDelete: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - product deleted successfully </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: 400 - product is not deleted </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: 402 - product id does not exist </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
                         </article>
                       </div>
                       <hr>
@@ -1223,7 +1459,15 @@ except ApiException as e:
                             <div class="tab-content" style='margin-bottom: 10px;'>
                             </div>
 
-                            <h3> Status: 400 - bad input parameter </h3>
+                            <h3> Status: 400 - invalid input </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: 403 - invalid product id </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>

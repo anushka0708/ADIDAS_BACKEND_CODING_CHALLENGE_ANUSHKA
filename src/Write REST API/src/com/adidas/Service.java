@@ -8,6 +8,7 @@ import static spark.Spark.port;
 import java.sql.SQLException;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonParser;
 
 public class Service {
 	static String driverClassName;
@@ -33,11 +34,14 @@ public class Service {
 		//update a product where id
 				put("/products/:id", (request, response) -> {
 					response.type("application/json");
-					Product product = new Gson().fromJson(request.body(), Product.class);
-					StatusResponse res=productService.updateProduct(product,dbConnection);
-					if(res.equals(StatusResponse.ERROR))
-						return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "400:Product is not updated."));
-					else return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, "Product has been updated successfully"));
+					if(productService.getProduct(request.params(":id"), dbConnection)!=null){
+						Product product = new Gson().fromJson(request.body(), Product.class);
+						StatusResponse res=productService.updateProduct(product,dbConnection);
+						if(res.equals(StatusResponse.ERROR))
+							return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "400:Product is not updated. Please check the request body"));
+						else return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, "200:Product has been updated successfully"));
+					}
+					else return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "403:Product is not updated. Please provide a valid product id in the URL"));
 				});
 				
 				
@@ -51,6 +55,8 @@ public class Service {
 				return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "400:Product is not added. Please check the request body and provide a valid product."));
 			else if(res.equals(StatusResponse.DUPLICATEPRODUCT))
 				return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "409: Product ID already exists"));
+			else if(res.equals(StatusResponse.IDNULL))
+				return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "410: Product ID can not be empty"));
 			else return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, "201:Product has been added successfully"));
 		});
 
@@ -62,6 +68,8 @@ public class Service {
 			StatusResponse res=productService.deleteProduct(request.params(":id"),dbConnection);
 			if(res.equals(StatusResponse.ERROR))
 				return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "400:Product is not deleted."));
+			else if(res.equals(StatusResponse.IDNOTPRESENT))
+				return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "402: Product ID does not exist"));
 			else return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, "200:Product has been deleted successfully"));
 		});
 

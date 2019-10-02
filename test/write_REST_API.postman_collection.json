@@ -41,7 +41,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"New and improved Gym Shoes \",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"meta_data\" : {\n\t\"meta_title\" : \"Shoes are here\",\n\t\"site_name\" : \"UK Adidas shoes\",\n\t\"description\" : \"Just a sample description\",\n\t\"keywords\" : \"GYM | SHOES\",\n\t\"canonical\" : \"/shoes/gym.html\"\n},\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
+					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"Updated name \",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"meta_data\" : {\n\t\"meta_title\" : \"Shoes are here\",\n\t\"site_name\" : \"UK Adidas shoes\",\n\t\"description\" : \"Just a sample description\",\n\t\"keywords\" : \"GYM | SHOES\",\n\t\"canonical\" : \"/shoes/gym.html\"\n},\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
 				},
 				"description": "Updating a product name with ID ABC002. Please run get product by id ABC002 to validate the update."
 			},
@@ -64,6 +64,106 @@
 					"raw": ""
 				},
 				"description": "Deleting a product with ID ABC002"
+			},
+			"response": []
+		},
+		{
+			"name": "Adding an invalid product",
+			"request": {
+				"url": "127.0.0.1:8080/products",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"New Gym Shoes\",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
+				},
+				"description": "Adding a product with invalid request body"
+			},
+			"response": []
+		},
+		{
+			"name": "Adding a duplicate product",
+			"request": {
+				"url": "127.0.0.1:8080/products",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"New Gym Shoes\",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"meta_data\" : {\n\t\"meta_title\" : \"Shoes are here\",\n\t\"site_name\" : \"UK Adidas shoes\",\n\t\"description\" : \"Just a sample description\",\n\t\"keywords\" : \"GYM | SHOES\",\n\t\"canonical\" : \"/shoes/gym.html\"\n},\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
+				},
+				"description": "Adding a product with product id that already exists"
+			},
+			"response": []
+		},
+		{
+			"name": "Updating a product with invalid product id",
+			"request": {
+				"url": "127.0.0.1:8080/products/ABC008",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"Updated name \",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"meta_data\" : {\n\t\"meta_title\" : \"Shoes are here\",\n\t\"site_name\" : \"UK Adidas shoes\",\n\t\"description\" : \"Just a sample description\",\n\t\"keywords\" : \"GYM | SHOES\",\n\t\"canonical\" : \"/shoes/gym.html\"\n},\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
+				},
+				"description": "Updating a product name with ID ABC008 which is not present in the DB. Please change the id if required."
+			},
+			"response": []
+		},
+		{
+			"name": "Updating a product with invalid product body",
+			"request": {
+				"url": "127.0.0.1:8080/products/ABC002",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"Updated name \",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
+				},
+				"description": "Updating a product name with invalid product body"
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting a product with non existing id",
+			"request": {
+				"url": "127.0.0.1:8080/products/ABC008",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Deleting a product with ID that does not exist"
 			},
 			"response": []
 		}

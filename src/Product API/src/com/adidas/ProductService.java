@@ -40,12 +40,12 @@ public class ProductService{
 				description.put("subtitle",rs.getString("subtitle"));
 				description.put("text",rs.getString("text"));
 				productObject.setProduct_description(description);
+				return productObject;
 			}
 			if (rs != null)
 				rs.close();
 			if (stmt != null)
-				stmt.close();
-			return productObject;
+				stmt.close();			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}

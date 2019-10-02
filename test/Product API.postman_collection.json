@@ -21,11 +21,22 @@
 		{
 			"name": "Finding one product with ID",
 			"request": {
-				"url": "127.0.0.1:8088/products/ABC001",
+				"url": "127.0.0.1:8088/products/ABC002",
 				"method": "GET",
 				"header": [],
 				"body": {},
 				"description": "Finding one product with productID ABC001, change the ID if required"
+			},
+			"response": []
+		},
+		{
+			"name": "Finding one product with invalid product ID",
+			"request": {
+				"url": "127.0.0.1:8088/products/ABC008",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Finding one product with productID that is not present in the DB"
 			},
 			"response": []
 		}
