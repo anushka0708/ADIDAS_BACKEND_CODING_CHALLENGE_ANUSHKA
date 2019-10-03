@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "write_REST_API",
-		"_postman_id": "0cce6f19-2197-9aa0-4aa3-70bcd997a873",
+		"_postman_id": "66b88fe7-5e7d-e8bc-00dd-5aea58028eb6",
 		"description": "collection of requests for the write rest api for Adidas backend development challenge.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"New Gym Shoes\",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"meta_data\" : {\n\t\"meta_title\" : \"Shoes are here\",\n\t\"site_name\" : \"UK Adidas shoes\",\n\t\"description\" : \"Just a sample description\",\n\t\"keywords\" : \"GYM | SHOES\",\n\t\"canonical\" : \"/shoes/gym.html\"\n},\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
+					"raw": "{\n            \"id\": \"ABC001\",\n            \"name\": \"Gym Shoes\",\n            \"model_number\": \"BTO94\",\n            \"product_type\": \"inline\",\n            \"meta_data\": {\n                \"site_name\": \"adidas United Kingdom\",\n                \"keywords\": \"//www.adidas.co.uk/nite-jogger-shoes/CG7088.html\",\n                \"page_title\": \"adidas Nite Jogger Shoes - Black | adidas UK\",\n                \"description\": \"Shop for Nite Jogger Shoes - Black at adidas.co.uk! See all the styles \",\n                \"canonical\": \"Nite Jogger Shoes\"\n            },\n            \"pricing_information\": {\n                \"standard_price\": 119.95,\n                \"currentPrice\": 119.95,\n                \"standard_price_no_vat\": 99.96\n            },\n            \"product_description\": {\n                \"subtitle\": \"Modern cushioning updates this flashy '80s standout.\",\n                \"text\": \"Inspired by the 1980 Nite Jogger, these shoes shine bright with retro style and \",\n                \"title\": \"hey there\"\n            }\n        }"
 				},
 				"description": "Adding a product with ID ABC002, change the ID if required."
 			},
@@ -30,7 +30,7 @@
 		{
 			"name": "Updating a product",
 			"request": {
-				"url": "127.0.0.1:8080/products/ABC002",
+				"url": "127.0.0.1:8080/products/HGTT199",
 				"method": "PUT",
 				"header": [
 					{
@@ -41,7 +41,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"Updated name \",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"meta_data\" : {\n\t\"meta_title\" : \"Shoes are here\",\n\t\"site_name\" : \"UK Adidas shoes\",\n\t\"description\" : \"Just a sample description\",\n\t\"keywords\" : \"GYM | SHOES\",\n\t\"canonical\" : \"/shoes/gym.html\"\n},\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
+					"raw": "{\n            \"id\": \"HGTT199\",\n            \"name\": \"Updated name\",\n            \"model_number\": \"BTO93\",\n            \"product_type\": \"inline\",\n            \"meta_data\": {\n                \"site_name\": \"adidas United Kingdom\",\n                \"keywords\": \"//www.adidas.co.uk/nite-jogger-shoes/CG7088.html\",\n                \"page_title\": \"adidas Nite Jogger Shoes - Black | adidas UK\",\n                \"description\": \"Shop for Nite Jogger Shoes - Black at adidas.co.uk! See all the styles \",\n                \"canonical\": \"Nite Jogger Shoes\"\n            },\n            \"pricing_information\": {\n                \"standard_price\": 119.95,\n                \"currentPrice\": 119.95,\n                \"standard_price_no_vat\": 99.96\n            },\n            \"product_description\": {\n                \"subtitle\": \"Modern cushioning updates this flashy '80s standout.\",\n                \"text\": \"Inspired by the 1980 Nite Jogger, these shoes shine bright with retro style and \",\n                \"title\": \"hey there\"\n            }\n        }"
 				},
 				"description": "Updating a product name with ID ABC002. Please run get product by id ABC002 to validate the update."
 			},
@@ -101,7 +101,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"New Gym Shoes\",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"meta_data\" : {\n\t\"meta_title\" : \"Shoes are here\",\n\t\"site_name\" : \"UK Adidas shoes\",\n\t\"description\" : \"Just a sample description\",\n\t\"keywords\" : \"GYM | SHOES\",\n\t\"canonical\" : \"/shoes/gym.html\"\n},\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
+					"raw": "{\n            \"id\": \"ABC001\",\n            \"name\": \"Gym Shoes\",\n            \"model_number\": \"BTO94\",\n            \"product_type\": \"inline\",\n            \"meta_data\": {\n                \"site_name\": \"adidas United Kingdom\",\n                \"keywords\": \"//www.adidas.co.uk/nite-jogger-shoes/CG7088.html\",\n                \"page_title\": \"adidas Nite Jogger Shoes - Black | adidas UK\",\n                \"description\": \"Shop for Nite Jogger Shoes - Black at adidas.co.uk! See all the styles \",\n                \"canonical\": \"Nite Jogger Shoes\"\n            },\n            \"pricing_information\": {\n                \"standard_price\": 119.95,\n                \"currentPrice\": 119.95,\n                \"standard_price_no_vat\": 99.96\n            },\n            \"product_description\": {\n                \"subtitle\": \"Modern cushioning updates this flashy '80s standout.\",\n                \"text\": \"Inspired by the 1980 Nite Jogger, these shoes shine bright with retro style and \",\n                \"title\": \"hey there\"\n            }\n        }"
 				},
 				"description": "Adding a product with product id that already exists"
 			},
@@ -121,7 +121,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"id\" : \"ABC002\",\n\"name\" : \"Updated name \",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"meta_data\" : {\n\t\"meta_title\" : \"Shoes are here\",\n\t\"site_name\" : \"UK Adidas shoes\",\n\t\"description\" : \"Just a sample description\",\n\t\"keywords\" : \"GYM | SHOES\",\n\t\"canonical\" : \"/shoes/gym.html\"\n},\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
+					"raw": "{\n\"id\" : \"ABC008\",\n\"name\" : \"Updated name \",\n\"model_number\" : \"ABC\",\n\"product_type\" : \"inline\",\n\"meta_data\" : {\n\t\"meta_title\" : \"Shoes are here\",\n\t\"site_name\" : \"UK Adidas shoes\",\n\t\"description\" : \"Just a sample description\",\n\t\"keywords\" : \"GYM | SHOES\",\n\t\"canonical\" : \"/shoes/gym.html\"\n},\n\"pricing_information\": { \n\"standard_price\": 119.95, \n\"standard_price_no_vat\": 99.96, \n\"currentPrice\": 119.95 \n},\n\"standard_price\" : 123.2,\n\"standard_price_no_vat\" : 110.2,\n\"currentPrice\" : 123.2,\n\"product_description\" : {\n\t\"description_title\" : \"Description001\",\n\t\"subtitle\" : \"Subtitle001\",\n\t\"text\" : \"Text001\"\n}\n}"
 				},
 				"description": "Updating a product name with ID ABC008 which is not present in the DB. Please change the id if required."
 			},

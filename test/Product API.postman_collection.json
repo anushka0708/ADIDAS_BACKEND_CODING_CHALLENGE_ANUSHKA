@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Product API",
-		"_postman_id": "ba95494f-644d-3f88-563d-c51f0b08357c",
+		"_postman_id": "1b840984-1e60-4d7d-8aa5-5a6d39ac37b6",
 		"description": "Collection of requests for product API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -21,7 +21,7 @@
 		{
 			"name": "Finding one product with ID",
 			"request": {
-				"url": "127.0.0.1:8088/products/ABC002",
+				"url": "127.0.0.1:8088/products/HGTT199",
 				"method": "GET",
 				"header": [],
 				"body": {},
