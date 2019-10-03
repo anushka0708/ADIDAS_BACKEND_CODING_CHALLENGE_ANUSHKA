@@ -11,8 +11,8 @@ CREATE TABLE IF NOT EXISTS `product` (
   `standard_price` float NOT NULL DEFAULT '0',
   `standard_price_no_vat` float NOT NULL DEFAULT '0',
   `currentPrice` float NOT NULL DEFAULT '0',
-  `meta_title` varchar(250) DEFAULT NULL,
-  `description_title` varchar(250) DEFAULT NULL,
+  `page_title` varchar(250) DEFAULT NULL,
+  `title` varchar(250) DEFAULT NULL,
   `subtitle` varchar(250) DEFAULT NULL,
   `text` longtext,
   `site_name` varchar(250) DEFAULT NULL,
@@ -23,4 +23,4 @@ CREATE TABLE IF NOT EXISTS `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table adidas.product:
-INSERT INTO `product` (`id`, `name`, `model_number`, `product_type`, `standard_price`, `standard_price_no_vat`, `currentPrice`, `meta_title`, `description_title`, `subtitle`, `text`, `site_name`, `description`, `canonical`, `keywords`) VALUES('HGTT199', 'Nite Jogger Shoes', 'BTO93', 'inline', 119.95, 99.96, 119.95, 'adidas Nite Jogger Shoes - Black | adidas UK', 'hey there', 'Modern cushioning updates this flashy \'80s standout.', 'Inspired by the 1980 Nite Jogger, these shoes shine bright with retro style and ', 'adidas United Kingdom', 'Shop for Nite Jogger Shoes - Black at adidas.co.uk! See all the styles ', 'Nite Jogger Shoes', '//www.adidas.co.uk/nite-jogger-shoes/CG7088.html');
+INSERT INTO `product` (`id`, `name`, `model_number`, `product_type`, `standard_price`, `standard_price_no_vat`, `currentPrice`, `page_title`, `title`, `subtitle`, `text`, `site_name`, `description`, `canonical`, `keywords`) VALUES('HGTT199', 'Nite Jogger Shoes', 'BTO93', 'inline', 119.95, 99.96, 119.95, 'adidas Nite Jogger Shoes - Black | adidas UK', 'hey there', 'Modern cushioning updates this flashy \'80s standout.', 'Inspired by the 1980 Nite Jogger, these shoes shine bright with retro style and ', 'adidas United Kingdom', 'Shop for Nite Jogger Shoes - Black at adidas.co.uk! See all the styles ', 'Nite Jogger Shoes', '//www.adidas.co.uk/nite-jogger-shoes/CG7088.html');

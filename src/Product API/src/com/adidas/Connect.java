@@ -20,6 +20,7 @@ public class Connect {
 		}
 		catch(SQLException e){
 			e.printStackTrace();
+			System.exit(1);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}

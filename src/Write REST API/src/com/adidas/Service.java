@@ -30,21 +30,23 @@ public class Service {
 
 		final ProductService productService = new ProductService();
 
-		
+
 		//update a product where id
-				put("/products/:id", (request, response) -> {
-					response.type("application/json");
-					if(productService.getProduct(request.params(":id"), dbConnection)!=null){
-						Product product = new Gson().fromJson(request.body(), Product.class);
-						StatusResponse res=productService.updateProduct(product,dbConnection);
-						if(res.equals(StatusResponse.ERROR))
-							return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "400:Product is not updated. Please check the request body"));
-						else return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, "200:Product has been updated successfully"));
-					}
-					else return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "403:Product is not updated. Please provide a valid product id in the URL"));
-				});
-				
-				
+		put("/products/:id", (request, response) -> {
+			response.type("application/json");
+			if(productService.getProduct(request.params(":id"), dbConnection)!=null){
+				Product product = new Gson().fromJson(request.body(), Product.class);
+				StatusResponse res=productService.updateProduct(product,dbConnection);
+				if(res.equals(StatusResponse.ERROR))
+					return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "400:Product is not updated. Please check the request body"));
+				else if(res.equals(StatusResponse.IDNULL))
+					return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "410: Product ID can not be empty"));					
+				else return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, "200:Product has been updated successfully"));
+			}
+			else return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "403:Product is not updated. Please provide a valid product id in the URL"));
+		});
+
+
 		//add a new product
 		post("/products", (request, response) -> {
 			response.type("application/json");
@@ -60,7 +62,7 @@ public class Service {
 			else return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, "201:Product has been added successfully"));
 		});
 
-		
+
 
 		//delete product
 		delete("/products/:id", (request, response) -> {

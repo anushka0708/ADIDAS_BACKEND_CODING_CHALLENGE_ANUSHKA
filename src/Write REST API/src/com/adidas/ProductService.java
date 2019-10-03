@@ -11,13 +11,13 @@ public class ProductService{
 
 	public StatusResponse addProduct(Product product,Connect c) {
 		Connection con = c.dbConnection;
-		if(product.getId()==null|| product.getId()=="")
+		if(product.getId()==null|| product.getId()=="" || product.getId().length()==0)
 			return StatusResponse.IDNULL;
 
 		try {
 
 			String query = " insert into product (id,name, model_number, product_type, standard_price,standard_price_no_vat,"
-					+ "currentPrice,meta_title,description_title,subtitle,text,site_name,description,"
+					+ "currentPrice,page_title,title,subtitle,text,site_name,description,"
 					+ "canonical,keywords)"
 					+ " values (?, ?, ?, ?, ?,?,?,?, ?, ?, ?, ?,?,?, ?)";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
@@ -56,19 +56,32 @@ public class ProductService{
 	}
 
 	public StatusResponse updateProduct(Product product,Connect c) {
+
+		if(product.getId()==null|| product.getId()=="" || product.getId().length()==0)
+			return StatusResponse.IDNULL;
 		Connection con = c.dbConnection;
-		try {
+		try {			
 
-			String query = " update product set id = '" + product.getId() + "',name = '" + product.getName() + "', model_number ='" + product.getModel_number() + 
-					"', product_type='" + product.getProduct_type()+ "', standard_price='" + product.getPricing_information().get("standard_price") + "',standard_price_no_vat='" + 
-					product.getPricing_information().get("standard_price_no_vat") + "',currentPrice='" + product.getPricing_information().get("currentPrice")+ "',meta_title='" + product.getMeta().get("page_title") + 
-					"',description_title='" + product.getProduct_description().get("title") + "',subtitle='" + product.getProduct_description().get("subtitle")+ 
-					"',text='" + product.getProduct_description().get("text")+ "',site_name='" + product.getMeta().get("site_name")
-					+"',description='" + product.getMeta().get("description") + "',canonical='" + product.getMeta().get("canonical") + "',keywords='" +
-					product.getMeta().get("keywords") +"' where id= '" + product.getId() + "'";
-
+			String query = " update product set id=? ,name=? , model_number=? , product_type=? , standard_price=? ,standard_price_no_vat=? ,"
+					+ "currentPrice=? ,page_title=? ,title=? ,subtitle=? ,text=? ,site_name=? ,description=? ,"
+					+ "canonical=? ,keywords=? where id= '" + product.getId() +"'";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
-			preparedStmt.execute();			
+			preparedStmt.setString(1,product.getId());
+			preparedStmt.setString(2,product.getName());
+			preparedStmt.setString(3,product.getModel_number());
+			preparedStmt.setString(4,product.getProduct_type());
+			preparedStmt.setDouble(5,product.getPricing_information().get("standard_price"));
+			preparedStmt.setDouble(6,product.getPricing_information().get("standard_price_no_vat"));	
+			preparedStmt.setDouble(7,product.getPricing_information().get("currentPrice"));		
+			preparedStmt.setString(8,product.getMeta().get("page_title"));
+			preparedStmt.setString(9,product.getProduct_description().get("title"));
+			preparedStmt.setString(10,product.getProduct_description().get("subtitle"));
+			preparedStmt.setString(11,product.getProduct_description().get("text"));
+			preparedStmt.setString(12,product.getMeta().get("site_name"));
+			preparedStmt.setString(13,product.getMeta().get("description"));
+			preparedStmt.setString(14,product.getMeta().get("canonical"));
+			preparedStmt.setString(15,product.getMeta().get("keywords"));
+			preparedStmt.execute();					
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -106,7 +119,7 @@ public class ProductService{
 		return StatusResponse.IDNOTPRESENT;
 
 	}
-	
+
 	public Product getProduct(String productID,Connect c) {
 		Connection con = c.dbConnection;
 		Product productObject = new Product();
@@ -121,7 +134,7 @@ public class ProductService{
 				productObject.setProduct_type(rs.getString("product_type"));
 
 				HashMap<String,String> metaData  = new HashMap<String,String>();
-				metaData.put("page_title", rs.getString("meta_title"));
+				metaData.put("page_title", rs.getString("page_title"));
 				metaData.put("site_name",rs.getString("site_name"));
 				metaData.put("description",rs.getString("description"));
 				metaData.put("keywords",rs.getString("keywords"));
@@ -135,7 +148,7 @@ public class ProductService{
 				productObject.setPricing_information(pricingInformation);
 
 				HashMap<String, String> description = new HashMap<String, String>();
-				description.put("title",rs.getString("description_title"));
+				description.put("title",rs.getString("title"));
 				description.put("subtitle",rs.getString("subtitle"));
 				description.put("text",rs.getString("text"));
 				productObject.setProduct_description(description);

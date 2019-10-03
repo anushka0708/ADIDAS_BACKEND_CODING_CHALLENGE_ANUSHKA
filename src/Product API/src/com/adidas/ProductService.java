@@ -22,7 +22,7 @@ public class ProductService{
 				productObject.setProduct_type(rs.getString("product_type"));
 
 				HashMap<String,String> metaData  = new HashMap<String,String>();
-				metaData.put("page_title", rs.getString("meta_title"));
+				metaData.put("page_title", rs.getString("page_title"));
 				metaData.put("site_name",rs.getString("site_name"));
 				metaData.put("description",rs.getString("description"));
 				metaData.put("keywords",rs.getString("keywords"));
@@ -36,7 +36,7 @@ public class ProductService{
 				productObject.setPricing_information(pricingInformation);
 
 				HashMap<String, String> description = new HashMap<String, String>();
-				description.put("title",rs.getString("description_title"));
+				description.put("title",rs.getString("title"));
 				description.put("subtitle",rs.getString("subtitle"));
 				description.put("text",rs.getString("text"));
 				productObject.setProduct_description(description);
@@ -68,7 +68,7 @@ public class ProductService{
 				productObject.setProduct_type(rs.getString("product_type"));
 
 				HashMap<String,String> metaData  = new HashMap<String,String>();
-				metaData.put("page_title", rs.getString("meta_title"));
+				metaData.put("page_title", rs.getString("page_title"));
 				metaData.put("site_name",rs.getString("site_name"));
 				metaData.put("description",rs.getString("description"));
 				metaData.put("keywords",rs.getString("keywords"));
@@ -82,7 +82,7 @@ public class ProductService{
 				productObject.setPricing_information(pricingInformation);
 
 				HashMap<String, String> description = new HashMap<String, String>();
-				description.put("title",rs.getString("description_title"));
+				description.put("title",rs.getString("title"));
 				description.put("subtitle",rs.getString("subtitle"));
 				description.put("text",rs.getString("text"));
 				productObject.setProduct_description(description);

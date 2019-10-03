@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Connect {
 	public Connection dbConnection;
 	/*
-	 * Creates connection to the MYsql database*/
+	 * Creates connection to the MYSql database*/
 	Connect(String driverClassName, String connectionURL, String userName, String passWord){
 		connectionURL=connectionURL.concat("?useUnicode=true&useJDBCCompliantTimezoneShift"
 				+ "=true&useLegacyDatetimeCode=false&serverTimezone=UTC");		
@@ -20,6 +20,7 @@ public class Connect {
 		}
 		catch(SQLException e){
 			e.printStackTrace();
+			System.exit(1);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}

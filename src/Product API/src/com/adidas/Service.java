@@ -2,7 +2,9 @@ package com.adidas;
 
 import static spark.Spark.get;
 import static spark.Spark.port;
+
 import java.sql.SQLException;
+
 import com.google.gson.Gson;
 
 public class Service {
@@ -22,6 +24,7 @@ public class Service {
 		userName=args[1];
 		passWord=args[2];
 		dbConnection = new Connect(driverClassName,connectionURL,userName,passWord);
+		
 
 		final ProductService productService = new ProductService();
 
