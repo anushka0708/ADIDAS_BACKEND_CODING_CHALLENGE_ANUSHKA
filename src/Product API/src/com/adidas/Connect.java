@@ -9,6 +9,8 @@ public class Connect {
 	/*
 	 * Creates connection to the MYsql database*/
 	Connect(String driverClassName, String connectionURL, String userName, String passWord){
+		connectionURL=connectionURL.concat("?useUnicode=true&useJDBCCompliantTimezoneShift"
+				+ "=true&useLegacyDatetimeCode=false&serverTimezone=UTC");		
 		try{  
 			if(dbConnection==null){
 				Class.forName(driverClassName);  
