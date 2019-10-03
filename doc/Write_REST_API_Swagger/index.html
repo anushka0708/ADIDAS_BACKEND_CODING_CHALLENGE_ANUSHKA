@@ -747,12 +747,12 @@ margin-bottom: 20px;
                       <article id="api-Default-productsPost-0" data-group="User" data-name="productsPost" data-version="0">
                         <div class="pull-left">
                           <h1>productsPost</h1>
-                          <p>adds a product</p>
+                          <p>Adds a product</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Adds a valid product to the system</p>
+                        <p class="marked">Adds a valid product to the system. ID field of the input should be unique and not null. Rest of the fields have been given a default value internally.</p>
                         <p></p>
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/products</span></code></pre>
@@ -828,7 +828,7 @@ public class DefaultApiExample {
 
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
-// adds a product
+// Adds a product
 [apiInstance productsPostWith:product
               completionHandler: ^(NSError* error) {
                             if (error) {
@@ -880,7 +880,7 @@ namespace Example
 
             try
             {
-                // adds a product
+                // Adds a product
                 apiInstance.productsPost(product);
             }
             catch (Exception e)
@@ -936,7 +936,7 @@ api_instance = swagger_client.DefaultApi()
 product =  # Object | product to be added (optional)
 
 try: 
-    # adds a product
+    # Adds a product
     api_instance.products_post(product=product)
 except ApiException as e:
     print("Exception when calling DefaultApi->productsPost: %s\n" % e)</code></pre>
@@ -1032,13 +1032,12 @@ $(document).ready(function() {
                       <article id="api-Default-productsProductIDDelete-0" data-group="User" data-name="productsProductIDDelete" data-version="0">
                         <div class="pull-left">
                           <h1>productsProductIDDelete</h1>
-                          <p>deleted a product with given id</p>
+                          <p>Deletes a product with given id</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">deletes the product having specified id
-</p>
+                        <p class="marked">Deletes the product having specified id. Verifies internally if the product is present before deleting it.</p>
                         <p></p>
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/products/productID</span></code></pre>
@@ -1111,7 +1110,7 @@ public class DefaultApiExample {
                               <pre class="prettyprint"><code class="language-cpp">
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
-// deleted a product with given id
+// Deletes a product with given id
 [apiInstance productsProductIDDeleteWithCompletionHandler: 
               ^(NSError* error) {
                             if (error) {
@@ -1158,7 +1157,7 @@ namespace Example
 
             try
             {
-                // deleted a product with given id
+                // Deletes a product with given id
                 apiInstance.productsProductIDDelete();
             }
             catch (Exception e)
@@ -1211,7 +1210,7 @@ from pprint import pprint
 api_instance = swagger_client.DefaultApi()
 
 try: 
-    # deleted a product with given id
+    # Deletes a product with given id
     api_instance.products_product_id_delete()
 except ApiException as e:
     print("Exception when calling DefaultApi->productsProductIDDelete: %s\n" % e)</code></pre>
@@ -1257,13 +1256,12 @@ except ApiException as e:
                       <article id="api-Default-productsProductIDPut-0" data-group="User" data-name="productsProductIDPut" data-version="0">
                         <div class="pull-left">
                           <h1>productsProductIDPut</h1>
-                          <p>updates a product with id</p>
+                          <p>Updates a valid product having the spicified id.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">updates the product having specified id
-</p>
+                        <p class="marked">Updates the product having specified id. ID field in the request body should be not null.</p>
                         <p></p>
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/products/productID</span></code></pre>
@@ -1336,7 +1334,7 @@ public class DefaultApiExample {
                               <pre class="prettyprint"><code class="language-cpp">
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
-// updates a product with id
+// Updates a valid product having the spicified id.
 [apiInstance productsProductIDPutWithCompletionHandler: 
               ^(NSError* error) {
                             if (error) {
@@ -1383,7 +1381,7 @@ namespace Example
 
             try
             {
-                // updates a product with id
+                // Updates a valid product having the spicified id.
                 apiInstance.productsProductIDPut();
             }
             catch (Exception e)
@@ -1436,7 +1434,7 @@ from pprint import pprint
 api_instance = swagger_client.DefaultApi()
 
 try: 
-    # updates a product with id
+    # Updates a valid product having the spicified id.
     api_instance.products_product_id_put()
 except ApiException as e:
     print("Exception when calling DefaultApi->productsProductIDPut: %s\n" % e)</code></pre>
@@ -1468,6 +1466,14 @@ except ApiException as e:
                             </div>
 
                             <h3> Status: 403 - invalid product id </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: 410 - Product ID can not be empty </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>
