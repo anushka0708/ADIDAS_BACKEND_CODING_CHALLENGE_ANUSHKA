@@ -4,21 +4,21 @@ USE `adidas`;
 
 -- Dumping structure for table adidas.product
 CREATE TABLE IF NOT EXISTS `product` (
-  `id` varchar(50) NOT NULL DEFAULT '',
-  `name` varchar(50) NOT NULL DEFAULT '',
-  `model_number` varchar(200) NOT NULL DEFAULT '',
-  `product_type` varchar(50) NOT NULL DEFAULT '',
-  `standard_price` float NOT NULL DEFAULT '0',
-  `standard_price_no_vat` float NOT NULL DEFAULT '0',
-  `currentPrice` float NOT NULL DEFAULT '0',
-  `page_title` varchar(250) DEFAULT NULL,
-  `title` varchar(250) DEFAULT NULL,
-  `subtitle` varchar(250) DEFAULT NULL,
+  `id` varchar(50) NOT NULL,
+  `name` varchar(50) DEFAULT 'NA',
+  `model_number` varchar(200) DEFAULT 'NA',
+  `product_type` varchar(50) DEFAULT 'NA',
+  `standard_price` float DEFAULT '0',
+  `standard_price_no_vat` float DEFAULT '0',
+  `currentPrice` float DEFAULT '0',
+  `page_title` varchar(250) DEFAULT "NA",
+  `title` varchar(250) DEFAULT "NA",
+  `subtitle` varchar(250) DEFAULT "NA",
   `text` longtext,
-  `site_name` varchar(250) DEFAULT NULL,
+  `site_name` varchar(250) DEFAULT "NA",
   `description` longtext,
-  `canonical` varchar(250) DEFAULT NULL,
-  `keywords` varchar(250) DEFAULT NULL,
+  `canonical` varchar(250) DEFAULT "NA",
+  `keywords` varchar(250) DEFAULT "NA",
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

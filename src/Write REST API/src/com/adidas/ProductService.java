@@ -25,9 +25,15 @@ public class ProductService{
 			preparedStmt.setString(2,product.getName());
 			preparedStmt.setString(3,product.getModel_number());
 			preparedStmt.setString(4,product.getProduct_type());
-			preparedStmt.setDouble(5,product.getPricing_information().get("standard_price"));
-			preparedStmt.setDouble(6,product.getPricing_information().get("standard_price_no_vat"));	
-			preparedStmt.setDouble(7,product.getPricing_information().get("currentPrice"));		
+			if(product.getPricing_information().get("standard_price")==null)
+				preparedStmt.setDouble(5,0);
+			else preparedStmt.setDouble(5,product.getPricing_information().get("standard_price"));
+			if(product.getPricing_information().get("standard_price_no_vat")==null)
+				preparedStmt.setDouble(6,0);
+			else preparedStmt.setDouble(6,product.getPricing_information().get("standard_price_no_vat"));
+			if(product.getPricing_information().get("currentPrice")==null)
+				preparedStmt.setDouble(7,0);
+			else preparedStmt.setDouble(7,product.getPricing_information().get("currentPrice"));		
 			preparedStmt.setString(8,product.getMeta().get("page_title"));
 			preparedStmt.setString(9,product.getProduct_description().get("title"));
 			preparedStmt.setString(10,product.getProduct_description().get("subtitle"));
