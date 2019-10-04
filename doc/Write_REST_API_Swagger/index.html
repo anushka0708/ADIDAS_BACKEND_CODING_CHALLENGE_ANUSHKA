@@ -1256,12 +1256,12 @@ except ApiException as e:
                       <article id="api-Default-productsProductIDPut-0" data-group="User" data-name="productsProductIDPut" data-version="0">
                         <div class="pull-left">
                           <h1>productsProductIDPut</h1>
-                          <p>Updates a valid product having the spicified id.</p>
+                          <p>Updates a valid product.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Updates the product having specified id. ID field in the request body should be not null.</p>
+                        <p class="marked">Updates the product having specified id in the request body.The entire product gets replaced with the product information given in the body. ID present in the request body should be unique and not null.</p>
                         <p></p>
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/products/productID</span></code></pre>
@@ -1334,7 +1334,7 @@ public class DefaultApiExample {
                               <pre class="prettyprint"><code class="language-cpp">
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
-// Updates a valid product having the spicified id.
+// Updates a valid product.
 [apiInstance productsProductIDPutWithCompletionHandler: 
               ^(NSError* error) {
                             if (error) {
@@ -1381,7 +1381,7 @@ namespace Example
 
             try
             {
-                // Updates a valid product having the spicified id.
+                // Updates a valid product.
                 apiInstance.productsProductIDPut();
             }
             catch (Exception e)
@@ -1434,7 +1434,7 @@ from pprint import pprint
 api_instance = swagger_client.DefaultApi()
 
 try: 
-    # Updates a valid product having the spicified id.
+    # Updates a valid product.
     api_instance.products_product_id_put()
 except ApiException as e:
     print("Exception when calling DefaultApi->productsProductIDPut: %s\n" % e)</code></pre>

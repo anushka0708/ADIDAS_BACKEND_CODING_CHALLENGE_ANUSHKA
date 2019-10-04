@@ -79,7 +79,7 @@ public class ProductService{
 			if(product.getPricing_information().get("standard_price")==null)
 				preparedStmt.setDouble(5,0);
 			else preparedStmt.setDouble(5,product.getPricing_information().get("standard_price"));
-			if(product.getPricing_information().get("standard_price_no_vat")==null)
+			if(product.getPricing_information().get("standard_addprice_no_vat")==null)
 				preparedStmt.setDouble(6,0);
 			else preparedStmt.setDouble(6,product.getPricing_information().get("standard_price_no_vat"));
 			if(product.getPricing_information().get("currentPrice")==null)
@@ -95,7 +95,11 @@ public class ProductService{
 			preparedStmt.setString(15,product.getMeta().get("keywords"));
 			preparedStmt.execute();					
 
-		} catch (SQLException e) {
+		} catch(SQLIntegrityConstraintViolationException e){
+			e.printStackTrace();
+			return StatusResponse.DUPLICATEPRODUCT;
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 			return StatusResponse.ERROR;			
 		}

@@ -32,10 +32,10 @@ public class Service {
 
 
 		//update a product where id
-		put("/products/:id", (request, response) -> {
+		put("/products", (request, response) -> {
 			response.type("application/json");
-			if(productService.getProduct(request.params(":id"), dbConnection)!=null){
-				Product product = new Gson().fromJson(request.body(), Product.class);
+			Product product = new Gson().fromJson(request.body(), Product.class);
+			if(productService.getProduct(product.getId(), dbConnection)!=null){				
 				StatusResponse res=productService.updateProduct(product,dbConnection);
 				if(res.equals(StatusResponse.ERROR))
 					return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "400:Product is not updated. Please check the request body"));
@@ -43,7 +43,7 @@ public class Service {
 					return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "410: Product ID can not be empty"));					
 				else return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, "200:Product has been updated successfully"));
 			}
-			else return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "403:Product is not updated. Please provide a valid product id in the URL"));
+			else return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "403:Product is not updated. Please provide a valid product id"));
 		});
 
 

@@ -110,7 +110,7 @@
 		{
 			"name": "Updating a product with invalid product id",
 			"request": {
-				"url": "127.0.0.1:8080/products/ABC008",
+				"url": "127.0.0.1:8080/products",
 				"method": "PUT",
 				"header": [
 					{
@@ -130,7 +130,7 @@
 		{
 			"name": "Updating a product with invalid product body",
 			"request": {
-				"url": "127.0.0.1:8080/products/ABC002",
+				"url": "127.0.0.1:8080/products",
 				"method": "PUT",
 				"header": [
 					{
