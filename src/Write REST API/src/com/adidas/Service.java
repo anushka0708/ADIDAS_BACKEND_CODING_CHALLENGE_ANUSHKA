@@ -43,7 +43,7 @@ public class Service {
 					return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "410: Product ID can not be empty"));					
 				else return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, "200:Product has been updated successfully"));
 			}
-			else return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "403:Product is not updated. Please provide a valid product id"));
+			else return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, "403:Product is not updated. Please provide a valid product."));
 		});
 
 

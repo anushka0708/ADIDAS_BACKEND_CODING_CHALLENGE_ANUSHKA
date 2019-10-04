@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "write_REST_API",
-		"_postman_id": "66b88fe7-5e7d-e8bc-00dd-5aea58028eb6",
+		"_postman_id": "cdf1c111-9220-45df-4aad-8d7a039ae4ad",
 		"description": "collection of requests for the write rest api for Adidas backend development challenge.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -30,7 +30,7 @@
 		{
 			"name": "Updating a product",
 			"request": {
-				"url": "127.0.0.1:8080/products/HGTT199",
+				"url": "127.0.0.1:8080/products",
 				"method": "PUT",
 				"header": [
 					{
@@ -50,7 +50,7 @@
 		{
 			"name": "Deleting a product",
 			"request": {
-				"url": "127.0.0.1:8080/products/ABC002",
+				"url": "127.0.0.1:8080/products/ABC001",
 				"method": "DELETE",
 				"header": [
 					{
@@ -101,7 +101,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n            \"id\": \"ABC001\",\n            \"name\": \"Gym Shoes\",\n            \"model_number\": \"BTO94\",\n            \"product_type\": \"inline\",\n            \"meta_data\": {\n                \"site_name\": \"adidas United Kingdom\",\n                \"keywords\": \"//www.adidas.co.uk/nite-jogger-shoes/CG7088.html\",\n                \"page_title\": \"adidas Nite Jogger Shoes - Black | adidas UK\",\n                \"description\": \"Shop for Nite Jogger Shoes - Black at adidas.co.uk! See all the styles \",\n                \"canonical\": \"Nite Jogger Shoes\"\n            },\n            \"pricing_information\": {\n                \"standard_price\": 119.95,\n                \"currentPrice\": 119.95,\n                \"standard_price_no_vat\": 99.96\n            },\n            \"product_description\": {\n                \"subtitle\": \"Modern cushioning updates this flashy '80s standout.\",\n                \"text\": \"Inspired by the 1980 Nite Jogger, these shoes shine bright with retro style and \",\n                \"title\": \"hey there\"\n            }\n        }"
+					"raw": "{\n            \"id\": \"HGTT199\",\n            \"name\": \"Gym Shoes\",\n            \"model_number\": \"BTO94\",\n            \"product_type\": \"inline\",\n            \"meta_data\": {\n                \"site_name\": \"adidas United Kingdom\",\n                \"keywords\": \"//www.adidas.co.uk/nite-jogger-shoes/CG7088.html\",\n                \"page_title\": \"adidas Nite Jogger Shoes - Black | adidas UK\",\n                \"description\": \"Shop for Nite Jogger Shoes - Black at adidas.co.uk! See all the styles \",\n                \"canonical\": \"Nite Jogger Shoes\"\n            },\n            \"pricing_information\": {\n                \"standard_price\": 119.95,\n                \"currentPrice\": 119.95,\n                \"standard_price_no_vat\": 99.96\n            },\n            \"product_description\": {\n                \"subtitle\": \"Modern cushioning updates this flashy '80s standout.\",\n                \"text\": \"Inspired by the 1980 Nite Jogger, these shoes shine bright with retro style and \",\n                \"title\": \"hey there\"\n            }\n        }"
 				},
 				"description": "Adding a product with product id that already exists"
 			},

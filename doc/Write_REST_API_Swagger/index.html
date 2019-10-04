@@ -719,8 +719,8 @@ margin-bottom: 20px;
                     <li data-group="Default" data-name="productsProductIDDelete" class="">
                       <a href="#api-Default-productsProductIDDelete">productsProductIDDelete</a>
                     </li>
-                    <li data-group="Default" data-name="productsProductIDPut" class="">
-                      <a href="#api-Default-productsProductIDPut">productsProductIDPut</a>
+                    <li data-group="Default" data-name="productsPut" class="">
+                      <a href="#api-Default-productsPut">productsPut</a>
                     </li>
           </ul>
         </nav>
@@ -1252,41 +1252,41 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-productsProductIDPut">
-                      <article id="api-Default-productsProductIDPut-0" data-group="User" data-name="productsProductIDPut" data-version="0">
+                    <div id="api-Default-productsPut">
+                      <article id="api-Default-productsPut-0" data-group="User" data-name="productsPut" data-version="0">
                         <div class="pull-left">
-                          <h1>productsProductIDPut</h1>
+                          <h1>productsPut</h1>
                           <p>Updates a valid product.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Updates the product having specified id in the request body.The entire product gets replaced with the product information given in the body. ID present in the request body should be unique and not null.</p>
+                        <p class="marked">Updates the product having specified id in the request body.The entire product gets replaced with the product information given in the body. ID present in the request body should be existing.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/products/productID</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/products</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-productsProductIDPut-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-productsProductIDPut-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-productsProductIDPut-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-productsProductIDPut-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-productsProductIDPut-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-productsProductIDPut-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-productsProductIDPut-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-productsProductIDPut-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-productsProductIDPut-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-productsProductIDPut-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-productsProductIDPut-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-productsPut-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-productsPut-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-productsPut-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-productsPut-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-productsPut-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-productsPut-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-productsPut-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-productsPut-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-productsPut-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-productsPut-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-productsPut-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-productsProductIDPut-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "https://localhost/products/productID"</code></pre>
+                          <div class="tab-pane active" id="examples-Default-productsPut-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "https://localhost/products"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-productsProductIDPut-0-java">
+                          <div class="tab-pane" id="examples-Default-productsPut-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1301,16 +1301,16 @@ public class DefaultApiExample {
         
         DefaultApi apiInstance = new DefaultApi();
         try {
-            apiInstance.productsProductIDPut();
+            apiInstance.productsPut();
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#productsProductIDPut");
+            System.err.println("Exception when calling DefaultApi#productsPut");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-productsProductIDPut-0-android">
+                          <div class="tab-pane" id="examples-Default-productsPut-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -1318,24 +1318,24 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
         try {
-            apiInstance.productsProductIDPut();
+            apiInstance.productsPut();
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#productsProductIDPut");
+            System.err.println("Exception when calling DefaultApi#productsPut");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-productsProductIDPut-0-groovy">
+  <div class="tab-pane" id="examples-Default-productsPut-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-productsProductIDPut-0-objc">
+                            <div class="tab-pane" id="examples-Default-productsPut-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // Updates a valid product.
-[apiInstance productsProductIDPutWithCompletionHandler: 
+[apiInstance productsPutWithCompletionHandler: 
               ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
@@ -1344,7 +1344,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-productsProductIDPut-0-javascript">
+                            <div class="tab-pane" id="examples-Default-productsPut-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var AdidasChallengeApi = require('adidas_challenge_api');
 
 var api = new AdidasChallengeApi.DefaultApi()
@@ -1356,14 +1356,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.productsProductIDPut(callback);
+api.productsPut(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-productsProductIDPut-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-productsPut-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-productsProductIDPut-0-csharp">
+                            <div class="tab-pane" id="examples-Default-productsPut-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1372,7 +1372,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class productsProductIDPutExample
+    public class productsPutExample
     {
         public void main()
         {
@@ -1382,11 +1382,11 @@ namespace Example
             try
             {
                 // Updates a valid product.
-                apiInstance.productsProductIDPut();
+                apiInstance.productsPut();
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.productsProductIDPut: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.productsPut: " + e.Message );
             }
         }
     }
@@ -1394,21 +1394,21 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-productsProductIDPut-0-php">
+                            <div class="tab-pane" id="examples-Default-productsPut-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\DefaultApi();
 
 try {
-    $api_instance->productsProductIDPut();
+    $api_instance->productsPut();
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->productsProductIDPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->productsPut: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-productsProductIDPut-0-perl">
+                            <div class="tab-pane" id="examples-Default-productsPut-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -1416,14 +1416,14 @@ use WWW::SwaggerClient::DefaultApi;
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 
 eval { 
-    $api_instance->productsProductIDPut();
+    $api_instance->productsPut();
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->productsProductIDPut: $@\n";
+    warn "Exception when calling DefaultApi->productsPut: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-productsProductIDPut-0-python">
+                            <div class="tab-pane" id="examples-Default-productsPut-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1435,9 +1435,9 @@ api_instance = swagger_client.DefaultApi()
 
 try: 
     # Updates a valid product.
-    api_instance.products_product_id_put()
+    api_instance.products_put()
 except ApiException as e:
-    print("Exception when calling DefaultApi->productsProductIDPut: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->productsPut: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
